@@ -1,31 +1,17 @@
-"use client"
-
 import Link from "next/link"
 import { Heart, Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react"
-import { motion } from "framer-motion"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  }
 
   return (
     <footer className="border-t border-border bg-muted/30">
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <motion.div
-            className="space-y-4"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ duration: 0.5 }}
-          >
+          {/* About Section */}
+          <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary shadow-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                 <Heart className="h-6 w-6 text-primary-foreground" fill="currentColor" />
               </div>
               <div className="flex flex-col">
@@ -36,56 +22,44 @@ export function Footer() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Spreading the Gospel and transforming lives through faith, generosity, and community outreach in Rwanda.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="space-y-4"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
+          {/* Quick Links */}
+          <div className="space-y-4">
             <h3 className="text-sm font-semibold text-foreground">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center group">
-                  <span className="group-hover:translate-x-1 transition-transform">About Us</span>
+                <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link href="/gospel" className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center group">
-                  <span className="group-hover:translate-x-1 transition-transform">Gospel Hub</span>
+                <Link href="/gospel" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Gospel Hub
                 </Link>
               </li>
               <li>
-                <Link href="/events" className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center group">
-                  <span className="group-hover:translate-x-1 transition-transform">Events</span>
+                <Link href="/events" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Events
                 </Link>
               </li>
               <li>
                 <Link
                   href="/testimonies"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center group"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  <span className="group-hover:translate-x-1 transition-transform">Testimonies</span>
+                  Testimonies
                 </Link>
               </li>
             </ul>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="space-y-4"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          {/* Contact Info */}
+          <div className="space-y-4">
             <h3 className="text-sm font-semibold text-foreground">Contact Us</h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-2 group">
-                <Mail className="h-4 w-4 text-muted-foreground mt-0.5 group-hover:text-primary transition-colors" />
+              <li className="flex items-start gap-2">
+                <Mail className="h-4 w-4 text-muted-foreground mt-0.5" />
                 <a
                   href="mailto:info@formedrwanda.org"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -93,8 +67,8 @@ export function Footer() {
                   info@formedrwanda.org
                 </a>
               </li>
-              <li className="flex items-start gap-2 group">
-                <Phone className="h-4 w-4 text-muted-foreground mt-0.5 group-hover:text-primary transition-colors" />
+              <li className="flex items-start gap-2">
+                <Phone className="h-4 w-4 text-muted-foreground mt-0.5" />
                 <a
                   href="tel:+250788123456"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -102,28 +76,22 @@ export function Footer() {
                   +250 788 123 456
                 </a>
               </li>
-              <li className="flex items-start gap-2 group">
-                <MapPin className="h-4 w-4 text-muted-foreground mt-0.5 group-hover:text-primary transition-colors" />
+              <li className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 text-muted-foreground mt-0.5" />
                 <span className="text-sm text-muted-foreground">Kigali, Rwanda</span>
               </li>
             </ul>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="space-y-4"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
+          {/* Social Media */}
+          <div className="space-y-4">
             <h3 className="text-sm font-semibold text-foreground">Follow Us</h3>
             <div className="flex gap-3">
               <a
                 href="https://facebook.com/formedrwanda"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:shadow-md"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="h-4 w-4" />
@@ -132,7 +100,7 @@ export function Footer() {
                 href="https://instagram.com/formedrwanda"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:shadow-md"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-4 w-4" />
@@ -141,7 +109,7 @@ export function Footer() {
                 href="https://twitter.com/formedrwanda"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:shadow-md"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="h-4 w-4" />
@@ -150,15 +118,16 @@ export function Footer() {
                 href="https://youtube.com/@formedrwanda"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all hover:shadow-md"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube className="h-4 w-4" />
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="mt-12 border-t border-border pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-muted-foreground text-center md:text-left">
